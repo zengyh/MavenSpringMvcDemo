@@ -15,7 +15,7 @@
 	<context:annotation-config/>
 
 	<!-- DispatcherServlet上下文， 只管理@Controller类型的bean， 忽略其他型的bean, 如@Service -->
-	<context:component-scan base-package="edu.controller">
+	<context:component-scan base-package="edu.mvcdemo.controller">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>

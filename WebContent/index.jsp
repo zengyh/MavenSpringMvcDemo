@@ -9,7 +9,7 @@
 <body>
      <a href="${pageContext.request.contextPath}/hello/world" target="_blank">以Get方式发起/hello/world请求</a>
      <br>
-     <a href="${pageContext.request.contextPath}/jsp/send-helloworld-post.jsp" target="_blank">跳转到”以POST方式发起/hello/world请求”的页面</a>
+     <a href="${pageContext.request.contextPath}/jsp/send-helloworld-post.jsp" target="_blank">跳转到“以POST方式发起/hello/world请求”的页面</a>
      <br>
      <a href="${pageContext.request.contextPath}/jsp/send-helloworld2.jsp" target="_blank">跳转到“发起/hello/world2请求"的页面</a>
 </body>
