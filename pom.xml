@@ -1,0 +1,243 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>terry.codex</groupId>
+	<artifactId>MavenSpringMvcDemo</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>MavenSpringMvcDemo</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<junit.version>3.8.1</junit.version>
+		<javax.servlet.version>2.5</javax.servlet.version>
+		<!-- 源代码Java编译版本 -->
+		<maven.compiler.source.version>1.7</maven.compiler.source.version>
+		<!-- 目标平台Java编译版本 -->
+		<maven.compiler.target.version>1.7</maven.compiler.target.version>
+		<org.apache.log4j.version>1.2.17</org.apache.log4j.version>
+		<spring.version>4.3.9.RELEASE</spring.version>
+		<commons.logging.version>1.2</commons.logging.version>
+		<javax.servlet.jsp.version>2.2</javax.servlet.jsp.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${javax.servlet.version}</version>
+			<scope>provided</scope> <!-- scope=provided 在编译和测试的过程有效，最后项目打包时不会加入 -->
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>${javax.servlet.jsp.version}</version>
+			<scope>provided</scope> <!-- scope=provided 在编译和测试的过程有效，最后项目打包时不会加入 -->
+		</dependency>
+		<!-- log4j日志打印包 -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${org.apache.log4j.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>commons-logging</groupId>
+		    <artifactId>commons-logging</artifactId>
+		    <version>${commons.logging.version}</version>
+		</dependency>
+ 		<dependency>
+		    <groupId>org.springframework</groupId>
+	        <artifactId>spring-aop</artifactId>
+	        <version>${spring.version}</version>	        
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+	        <artifactId>spring-beans</artifactId>
+	        <version>${spring.version}</version>
+		</dependency>	
+		<dependency>
+		    <groupId>org.springframework</groupId>
+	        <artifactId>spring-context</artifactId>
+	        <version>${spring.version}</version>	        
+		</dependency>	
+		<dependency>
+		    <groupId>org.springframework</groupId>
+	        <artifactId>spring-core</artifactId>
+	        <version>${spring.version}</version>	        
+		</dependency>	
+		<dependency>
+		    <groupId>org.springframework</groupId>
+	        <artifactId>spring-expression</artifactId>
+	        <version>${spring.version}</version>	        
+		</dependency>			
+		<dependency>
+		    <groupId>org.springframework</groupId>
+	        <artifactId>spring-web</artifactId>
+	        <version>${spring.version}</version>	        
+		</dependency>	
+		<dependency>
+		    <groupId>org.springframework</groupId>
+	        <artifactId>spring-webmvc</artifactId>
+	        <version>${spring.version}</version>	        
+		</dependency>	 												
+	</dependencies>
+
+	<build>
+	    <!-- 项目打包（packaging）后的文件名，去掉了后缀 -->
+		<finalName>${project.artifactId}</finalName>
+		<!--默认源代码目录 -->
+		<sourceDirectory>src</sourceDirectory>
+		<outputDirectory>${project.build.directory}/classes</outputDirectory> <!-- ${project.build.directory}就是我们通常看到的target目录 -->
+		<!--默认测试源代码目录 -->
+		<testSourceDirectory>test </testSourceDirectory>
+		<testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
+		<!--默认资源目录 -->
+		<resources>
+			<resource>
+				<directory>src</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<!--默认测试资源目录 -->
+		<testResources>
+			<testResource>
+				<directory>test</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</testResource>
+		</testResources>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-dependency-plugin</artifactId>
+										<versionRange>[2.0,)</versionRange>
+										<goals>
+											<goal>copy-dependencies</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+            <!-- 把依赖的jar包复制到target/${project.artifactId}/WEB-INF/lib目录下，在Web项目中这个是必须配置的 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<!-- ${project.build.directory}就是我们通常看到的target目录 -->
+							<outputDirectory>${project.build.directory}/${project.artifactId}/WEB-INF/lib</outputDirectory>
+							<excludeTransitive>false</excludeTransitive>
+							<stripVersion>true</stripVersion>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>		    
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>  <!-- 告知 maven-jar-plugin 添加一个 Class-Path 元素到 MANIFEST.MF 文件 -->
+							<classpathPrefix>lib/</classpathPrefix> <!-- classpathPrefix 指出，相对存档文件，所有的依赖项应该位于 “lib” 文件夹 -->
+							<!--<mainClass>theMainClass</mainClass> --> <!-- 当用户使用 lib 命令执行 JAR 文件时，使用该元素定义将要执行的类名 -->
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<!-- 指定WebApp目录，在Web项目中这个是必须配置的 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webappDirectory>${project.build.directory}/${project.artifactId}</webappDirectory>
+					<warSourceDirectory>${basedir}/WebContent</warSourceDirectory>
+					<webResources>
+						<resource>
+							<directory>WebContent\WEB-INF</directory>
+							<targetPath>WEB-INF</targetPath>
+							<filtering>true</filtering>
+							<includes>
+								<include>web.xml</include>
+							</includes>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+			<!-- Java Compile版本号设置 -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+				    <!-- 源代码Java编译版本 -->
+					<source>${maven.compiler.source.version}</source>
+					<!-- 目标平台Java编译版本 -->
+					<target>${maven.compiler.target.version}</target>
+				</configuration>
+			</plugin>
+			<!-- 配置tomcat6-maven-plugin，在Web项目中这个是必须配置的，当然你也可以使用其它的web容器，如JBOSS等 -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat6-maven-plugin</artifactId>
+				<version>2.2</version>
+				<executions>
+					<!-- 打包成功后，运行tomcat服务 -->
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<!-- <configuration>的以下三个子字节点必须配置： -->
+						<!--     <additionalConfigFilesDir> 默认值是 ${basedir}\src\java\main\webapp\tomcatconf，不重新指定的话，启动tomcat时会报错，提示找不到 src\java\main\webapp目录-->
+						<!--     <contextFile> 默认值是 ${basedir}\src\java\main\webapp\tomcatconf\META-INF\context.xml，不重新指定的话，启动tomcat时会报错，提示找不到 src\java\main\webapp目录-->
+						<!--     <warSourceDirectory> 默认值是 ${basedir}\src\java\main\webapp，不重新指定的话，启动tomcat时会报错，提示找不到 src\java\main\webapp目录-->
+						<configuration>
+							<additionalConfigFilesDir>${basedir}\WebContent\tomcatconf</additionalConfigFilesDir>
+							<contextFile>${basedir}\WebContent\tomcatconf\META-INF\context.xml</contextFile>
+							<!-- <serverXml>${basedir}/tomcatconf/server.xml</serverXml> -->
+							<!-- 项目的WebApp路径 -->
+							<warSourceDirectory>${basedir}\WebContent</warSourceDirectory>
+							<!-- 项目的Context Root -->
+							<!-- <path>/${project.artifactId}</path>  -->
+							<!-- 项目打包后的war包路径 -->
+							<!-- <warFile>${project.build.directory}/${project.build.finalName}.war</warFile> -->
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

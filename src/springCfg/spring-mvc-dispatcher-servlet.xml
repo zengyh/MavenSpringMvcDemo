@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        
+	<!-- 激活 Spring的 @Required,@Autowired,JSR 250's @PostConstruct, @PreDestroy and @Resource 等注解，
+	          让这些标注生效，使用户可以在Spring MVC中使用Spring的强大功能。 -->
+	<context:annotation-config/>
+
+	<!-- DispatcherServlet上下文， 只管理@Controller类型的bean， 忽略其他型的bean, 如@Service -->
+	<context:component-scan base-package="edu.controller">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	
+    <!-- 激活注解 @RequestMapping, @ExceptionHandler,@Controller,@RequestBody ,@ResponseBody等，
+                  即Spring MVC的Controller的相关的注解和数据绑定的注解都会生效 -->
+	<mvc:annotation-driven/>
+	
+    <!-- 静态资源处理， css， js， imgs，html 等-->
+	<mvc:resources location="/resources/" mapping="/resources/**"  />	
+	
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	
+</beans>  
