@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	
+	<!-- 激活 Spring的 @Required,@Autowired,JSR 250's @PostConstruct, @PreDestroy and @Resource 等注解，
+	          让这些标注生效，只对已经在spring容器里注册过的bean（无论是通过xml的方式还是通过package sanning的方式）有效!! -->
+	<context:annotation-config/>
+	
+	<!--在指定的package下扫描以及向spring容器注册javabean-->
+	<context:component-scan base-package="edu.mvcdemo.dao,edu.mvcdemo.service">
+	    <!-- 不注册@Controller类型的bean -->
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	
+</beans>

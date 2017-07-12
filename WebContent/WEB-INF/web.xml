@@ -4,6 +4,18 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
 	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 	<display-name>MavenSpringMvcDemo</display-name>
+
+	<!-- Spring应用上下文，如果不想使用Spring容器管理java bean，只是单纯第使用Spring MVC，可以不添加 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<!-- 不仅包含class路径，还包括jar文件中(class路径)进行查找，会导致项目启动的时候加载很慢，尽量避免使用 -->
+		<!-- <param-name>classpath*:springCfg/applicationContext-*.xml</param-name> -->
+		<!-- 只在项目的class路径中查找文件 -->
+		<param-value>classpath:springCfg/applicationContext-*.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 	
 	<!-- DispatcherServlet, Spring MVC的核心 -->
 	<servlet>

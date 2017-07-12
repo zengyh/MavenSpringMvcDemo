@@ -1,11 +1,8 @@
 package edu.mvcdemo.controller;
 
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 /**
  * @编写人： yh.zeng
@@ -27,9 +24,6 @@ public class HelloWorldController {
 	 */
 	@RequestMapping(value="/world", method=RequestMethod.GET)
 	public String helloMvcGet(){
-		ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes)RequestContextHolder.getRequestAttributes();
-		HttpServletRequest request = servletRequestAttributes.getRequest();
-		System.out.println(request.getRequestURI());
 		return "helloworld";
 	}
 	
