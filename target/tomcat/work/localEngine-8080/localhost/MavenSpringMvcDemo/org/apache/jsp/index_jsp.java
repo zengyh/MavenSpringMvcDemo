@@ -102,7 +102,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("/users/view/1/use/SessionAttributes\" target=\"_blank\">Controller中如何将model数据返回给页面，方式五：通过jorg.springframework.web.bind.annotation.SessionAttributes标注指定Model中的某些数据也存储到HttpSession中</a>\r\n");
       out.write("     <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("/users/view/1/use/ModelAttribute\" target=\"_blank\">Controller中如何将model数据返回给页面，方式六：通过jorg.springframework.web.bind.annotation.SessionAttributes实现</a>\r\n");
+      out.write("/users/view/1/use/ModelAttribute\" target=\"_blank\">Controller中如何将model数据返回给页面，方式六：通过jorg.springframework.web.bind.annotation.ModelAttribute实现</a>\r\n");
       out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
