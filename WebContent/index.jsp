@@ -25,7 +25,7 @@
      <a href="${pageContext.request.contextPath}/users/view/1/use/ModelMap" target="_blank">Controller中如何将model数据返回给页面，方式三：通过org.springframework.ui.ModelMap实现</a>
      <a href="${pageContext.request.contextPath}/users/view/1/use/Map" target="_blank">Controller中如何将model数据返回给页面，方式四：通过java.util.Map实现</a>
      <a href="${pageContext.request.contextPath}/users/view/1/use/SessionAttributes" target="_blank">Controller中如何将model数据返回给页面，方式五：通过jorg.springframework.web.bind.annotation.SessionAttributes标注指定Model中的某些数据也存储到HttpSession中</a>
-     <a href="${pageContext.request.contextPath}/users/view/1/use/ModelAttribute" target="_blank">Controller中如何将model数据返回给页面，方式六：通过jorg.springframework.web.bind.annotation.SessionAttributes实现</a>
+     <a href="${pageContext.request.contextPath}/users/view/1/use/ModelAttribute" target="_blank">Controller中如何将model数据返回给页面，方式六：通过jorg.springframework.web.bind.annotation.ModelAttribute实现</a>
 
 </body>
 </html>
