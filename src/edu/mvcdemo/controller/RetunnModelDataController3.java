@@ -29,8 +29,8 @@ public class RetunnModelDataController3 {
 	/**
 	 * 注解@ModelAttribute用法一：
 	 * 使用@ModelAttribute注解的方法会在此Controller每个方法执行前被执行，
-	 * 指定@ModelAttribute的name或value都是一样的功能，都是作为key，将标注的方法返回的对象作为value存放到Model中，
-	 * 不指定name和value的话，则以标注的方法返回的类型名称首字母小写作为key。
+	 * 指定@ModelAttribute的name或value都是一样的功能，都是作为key，将注解的方法返回的对象作为value存放到Model中，
+	 * 不指定name和value的话，则以注解的方法返回的类型名称首字母小写作为key。
 	 * @param userId  ResetFul路径的请求参数
 	 * @return
 	 */
