@@ -14,9 +14,9 @@
 	          让这些标注生效，使用户可以在Spring MVC中使用Spring的强大功能。
 	          只对已经在spring容器里注册过的bean（无论是通过xml的方式还是通过package sanning的方式）有效!!     
 	 -->
-	<context:annotation-config/>
+	<!-- <context:annotation-config/>  -->
 
-	<!-- 在指定的package下扫描以及向spring容器注册javabean -->
+	<!-- 除了具有<context:annotation-config/>标签的功能，还可以在指定的package下扫描以及向spring容器注册javabean -->
 	<context:component-scan base-package="edu.mvcdemo.controller">
 	    <!-- 只注册@Controller类型的bean，忽略其他型的bean，如@Service-->
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
