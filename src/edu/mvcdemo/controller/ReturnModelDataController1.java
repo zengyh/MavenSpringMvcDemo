@@ -21,7 +21,7 @@ import edu.mvcdemo.service.IUserService;
  * @文件描述: Controller中如何将model数据返回给页面的demo1
  */
 @Controller
-@Scope(value="singleton") //只实例化一个bean对象（即每次请求都使用同一个bean对象），默认是singletons
+@Scope(value="singleton") //只实例化一个bean对象（即每次请求都使用同一个bean对象），默认是singleton
 @RequestMapping("users")
 public class ReturnModelDataController1 {
 	
