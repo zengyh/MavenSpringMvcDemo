@@ -2,6 +2,7 @@ package edu.mvcdemo.utils;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @编写人： yh.zeng
@@ -23,6 +24,23 @@ public class StringUtils {
         e.printStackTrace(printWriter);
 
         return stringWriter.toString();
+    }
+    
+
+    /**
+     * 返回web项目的context path，格式 为：协议://服务器IP或服务器主机名:端口号/项目的Context ROOT
+     * @param request
+     * @return
+     */
+    public static String getWebContextPath(HttpServletRequest request){
+		StringBuilder webContextPathBuilder = new StringBuilder();
+		webContextPathBuilder.append(request.getScheme())
+		                     .append("://")
+		                     .append(request.getServerName())
+		                     .append(":")
+		                     .append(request.getServerPort())
+		                     .append(request.getContextPath());
+		return webContextPathBuilder.toString();
     }
 
 }
