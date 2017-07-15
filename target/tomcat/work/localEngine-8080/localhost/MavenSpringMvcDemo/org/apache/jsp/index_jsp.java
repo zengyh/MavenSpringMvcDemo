@@ -105,6 +105,12 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("/users/view/1/use/ModelAttribute\" target=\"_blank\">Controller中如何将model数据返回给页面，方式六：通过org.springframework.web.bind.annotation.ModelAttribute实现</a>\r\n");
       out.write("     <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/users/view/1/use/HttpSession\" target=\"_blank\">Controller中如何将model数据返回给页面，方式七：直接将数据存到HttpSession，让页面可以获取</a>     \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/users/view/1/use/HttpServletRequest\" target=\"_blank\">Controller中如何将model数据返回给页面，方式八：直接将数据存到HttpServletRequest，让页面可以获取</a>     \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("/redirect/demo1\" target=\"_blank\">Spring MVC重定向demo,方式一：方法返回的URI（相对路径）中加上\"redirect:\"前缀，声明要重定向到该地址</a>\r\n");
       out.write("     <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
@@ -115,6 +121,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("     <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("/voidMethod/demo2\" target=\"_blank\">Controller中void方法的声明demo,<font color='red'>错误</font>的方式二：void方法不定义HttpServletResponse类型的入参，HttpServletResponse对象通过RequestContextHolder上下文获取</a>\r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/admin/user?add\" target=\"_blank\">表单提交demo</a>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

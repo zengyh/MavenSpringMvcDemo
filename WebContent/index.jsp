@@ -26,9 +26,12 @@
      <a href="${pageContext.request.contextPath}/users/view/1/use/Map" target="_blank">Controller中如何将model数据返回给页面，方式四：通过java.util.Map实现</a>
      <a href="${pageContext.request.contextPath}/users/view/1/use/SessionAttributes" target="_blank">Controller中如何将model数据返回给页面，方式五：通过org.springframework.web.bind.annotation.SessionAttributes标注指定Model中的某些数据也存储到HttpSession中</a>
      <a href="${pageContext.request.contextPath}/users/view/1/use/ModelAttribute" target="_blank">Controller中如何将model数据返回给页面，方式六：通过org.springframework.web.bind.annotation.ModelAttribute实现</a>
+     <a href="${pageContext.request.contextPath}/users/view/1/use/HttpSession" target="_blank">Controller中如何将model数据返回给页面，方式七：直接将数据存到HttpSession，让页面可以获取</a>     
+     <a href="${pageContext.request.contextPath}/users/view/1/use/HttpServletRequest" target="_blank">Controller中如何将model数据返回给页面，方式八：直接将数据存到HttpServletRequest，让页面可以获取</a>     
      <a href="${pageContext.request.contextPath}/redirect/demo1" target="_blank">Spring MVC重定向demo,方式一：方法返回的URI（相对路径）中加上"redirect:"前缀，声明要重定向到该地址</a>
      <a href="${pageContext.request.contextPath}/redirect/demo2" target="_blank">Spring MVC重定向demo,方式二：使用HttpServletResponse对象进行重定向，HttpServletResponse对象通过方法入参传入</a>
      <a href="${pageContext.request.contextPath}/voidMethod/demo1" target="_blank">Controller中void方法的声明demo,方式一：通过声明HttpServletResponse类型的方法入参，来使用HttpServletResponse对象</a>
      <a href="${pageContext.request.contextPath}/voidMethod/demo2" target="_blank">Controller中void方法的声明demo,<font color='red'>错误</font>的方式二：void方法不定义HttpServletResponse类型的入参，HttpServletResponse对象通过RequestContextHolder上下文获取</a>
+     <a href="${pageContext.request.contextPath}/admin/user?add" target="_blank">表单提交demo</a>
 </body>
 </html>

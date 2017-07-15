@@ -22,6 +22,7 @@
 		<javax.servlet.jsp.version>2.2</javax.servlet.jsp.version>
 		<jstl.jstl.version>1.2</jstl.jstl.version>
 		<taglibs.standard.version>1.1.2</taglibs.standard.version>
+		<commons-lang.version>2.6</commons-lang.version>
 	</properties>
 	
 	<dependencies>
@@ -50,11 +51,18 @@
 			<version>${org.apache.log4j.version}</version>
 		</dependency>
 		<!-- end  -->
+		<!-- common包 -->
 		<dependency>
 		    <groupId>commons-logging</groupId>
 		    <artifactId>commons-logging</artifactId>
 		    <version>${commons.logging.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>${commons-lang.version}</version>
+		</dependency>
+		<!-- end -->
 		<!-- JSTL标签库 -->
 		<dependency>
 		    <groupId>jstl</groupId>
