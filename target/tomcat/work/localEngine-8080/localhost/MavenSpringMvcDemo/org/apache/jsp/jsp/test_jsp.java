@@ -55,15 +55,15 @@ public final class test_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\r\n");
       out.write("<head>\r\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("<title>test.jsp</title>\r\n");
+      out.write("<title>Insert title here</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("   ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${requestScope.test1}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write(" <br>\r\n");
-      out.write("   ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${requestScope.test2}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write(" \r\n");
+      out.write("<form action=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/test/hanzi\" method=\"post\">\r\n");
+      out.write("   <input name=\"content\"/>\r\n");
+      out.write("   <input type=\"submit\" value=\"提交\">\r\n");
+      out.write("</form>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

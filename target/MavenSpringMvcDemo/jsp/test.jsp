@@ -4,10 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>test.jsp</title>
+<title>Insert title here</title>
 </head>
 <body>
-   ${requestScope.test1} <br>
-   ${requestScope.test2} 
+<form action="${pageContext.request.contextPath}/test/hanzi" method="post">
+   <input name="content"/>
+   <input type="submit" value="提交">
+</form>
 </body>
 </html>

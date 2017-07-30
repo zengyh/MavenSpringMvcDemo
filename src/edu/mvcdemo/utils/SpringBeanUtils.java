@@ -14,16 +14,14 @@ public class SpringBeanUtils {
 	
 	private static Logger logger = Logger.getLogger(SpringBeanUtils.class);
 	
-	static String filePath ="WebRoot/WEB-INF/applicationContext.xml";
 	static  ApplicationContext CONTEXT ;
 	static{
 		try{
-			CONTEXT = new FileSystemXmlApplicationContext(filePath);
+			CONTEXT = new FileSystemXmlApplicationContext("WebRoot/WEB-INF/applicationContext.xml");
 		}catch(Exception e){
-			logger.error(StringUtils.getExceptionMessage(e));
+			logger.warn(StringUtils.getExceptionMessage(e));
 		}
 	}
-	
 	
 	/**
 	 * 获取Bean
@@ -34,13 +32,13 @@ public class SpringBeanUtils {
 		return CONTEXT.getBean(uniqueIdentifier);
 	}
 	
-	public static String getFilePath() {
-		return filePath;
-	}
-
-	public static void setFilePath(String filePath) {
-		SpringBeanUtils.filePath = filePath;
-		CONTEXT = new FileSystemXmlApplicationContext(filePath);
+	public static void setFilePath(String... filePath) {
+		try{
+			CONTEXT = new FileSystemXmlApplicationContext(filePath);
+		}catch(Exception e){
+			logger.error(StringUtils.getExceptionMessage(e));
+		}
+		
 	}
 	
 }

@@ -53,7 +53,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>mvc-dispatcher</servlet-name>
-		<!-- mvc-dispatcher拦截所有的请求 -->
+		<!-- mvc-dispatcher拦截jsp页面除外的所有的请求，如果也要拦截jsp页面可以使用/* -->
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	

@@ -35,5 +35,28 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
+	<!-- 文件上传解析器 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- maxUploadSize 文件附件的大小最大限制，maxUploadSize=-1 表示无穷大，单位是byte。本案例，限制的最大附件为50M -->
+		<property name="maxUploadSize" value="52428800" />
+		<property name="defaultEncoding" value="UTF-8" />
+		<!-- resolveLazily属性启用是为了推迟文件解析，以便捕获文件大小异常 -->
+		<property name="resolveLazily" value="true" />
+	</bean>
+	
+	<!-- 
+	          用途1：Spring的xml配置文件中，可以通过${属性名}使用properties文件配置的值
+	          用途2：可以使用@Value("${属性名}")注解读取properties文件配置的值，再给字段赋值
+	                      方法1：注解在字段上，给字段赋值
+	                      方法2：注解在字段的setter方法中赋值           
+	 -->
+	 <bean id="propertyConfigurer"  
+           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
+          <property name="location">  
+              <value>classpath:fileupload.properties</value>  
+          </property>  
+     </bean>  
+	
 	
 </beans>  
