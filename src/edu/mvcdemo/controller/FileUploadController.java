@@ -62,7 +62,6 @@ public class FileUploadController {
 	/**
 	 * 单文件上传处理
 	 * @param files
-	 * @param request
 	 * @return
 	 * @throws Exception
 	 */
@@ -93,7 +92,6 @@ public class FileUploadController {
 	/**
 	 * 多文件上传处理
 	 * @param files
-	 * @param request
 	 * @return
 	 * @throws Exception
 	 */
