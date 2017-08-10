@@ -20,36 +20,4 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 	
-	<!-- 
-	          用途1：Spring的xml配置文件中，可以通过${属性名}使用properties文件配置的值
-	          用途2：可以使用@Value("${属性名}")注解，给字段赋值
-	                      方法1：注解在字段上，给字段赋值
-	                      方法2：注解在字段的setter方法中赋值           
-	 -->
-	 <bean id="propertyConfigurer"  
-           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
-          <property name="location">  
-              <value>classpath:fileupload.properties</value>  
-          </property>  
-     </bean>  
-	 
-	<!-- <context:property-placeholder location="classpath:fileupload.properties"/>   -->
-	
-	<!-- 
-	         用途：可以使用@Value("#{prop.属性名}")注解，给字段赋值
-	         方法1：注解在字段上，给字段赋值
-	         方法2：注解在字段的setter方法中赋值
-	 -->
-    <bean id="prop" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
- 	    <property name="locations">
- 		     <array>
- 			     <value>classpath:fileupload.properties</value>
- 		     </array>
- 	    </property>
-    </bean>
-    
-    <!-- 
-    <util:properties id="prop" location="classpath:fileupload.properties"/>
-     -->
-	
 </beans>

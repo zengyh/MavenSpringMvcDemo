@@ -54,7 +54,6 @@
 <body>
    <form action="${pageContext.request.contextPath}/onefile/upload" method="post" enctype="multipart/form-data" onsubmit="return checkForm();">
         <input type="file" name="file1" id="file1" onchange="checkFile(this)"/> <br>
-        <input type="text" name = "a" value="1"/> <br>
         <input type="submit" value="提交"/>
    </form>
 </body>

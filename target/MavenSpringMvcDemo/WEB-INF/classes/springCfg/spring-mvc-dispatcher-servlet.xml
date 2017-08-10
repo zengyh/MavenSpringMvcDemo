@@ -29,8 +29,20 @@
     <!-- 静态资源处理， css， js， imgs，html 等-->
 	<mvc:resources location="/resources/" mapping="/resources/**"  />	
 	
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="1" />
+		<property name="defaultViews">
+			<list>
+				<!-- Json视图 -->
+				<bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+			</list>
+		</property>
+	</bean>
+	
+    <!-- Jsp视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	    <!-- <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" /> -->
+	    <property name="order" value="2" />
 		<property name="prefix" value="/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
@@ -47,7 +59,7 @@
 	
 	<!-- 
 	          用途1：Spring的xml配置文件中，可以通过${属性名}使用properties文件配置的值
-	          用途2：可以使用@Value("${属性名}")注解，给字段赋值
+	          用途2：可以使用@Value("${属性名}")注解读取properties文件配置的值，再给字段赋值
 	                      方法1：注解在字段上，给字段赋值
 	                      方法2：注解在字段的setter方法中赋值           
 	 -->

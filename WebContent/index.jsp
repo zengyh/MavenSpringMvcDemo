@@ -35,6 +35,9 @@
      <a href="${pageContext.request.contextPath}/admin/user?add" target="_blank">表单提交demo</a>
      <a href="${pageContext.request.contextPath}/admin/onlefile?upload" target="_blank">单个文件上传</a>    
      <a href="${pageContext.request.contextPath}/admin/mutilpartfile?upload" target="_blank">多文件上传</a>  
-     <a href="${pageContext.request.contextPath}/uploaded-files/preview" target="_blank">预览上传到服务器上的所有图片</a>     
+     <a href="${pageContext.request.contextPath}/uploaded-files/preview" target="_blank">预览上传到服务器上的所有图片</a> 
+     <a href="${pageContext.request.contextPath}/jsontype/view1/users/1" target="_blank">Controller返回JSON数据的demo，方式一：使用@ResponseBody标注</a>          
+     <a href="${pageContext.request.contextPath}/jsontype/view2/users/1" target="_blank">Controller返回JSON数据的demo，方式二：使用ResponseEntity</a> 
+     <a href="${pageContext.request.contextPath}/jsontype/view3/users/1" target="_blank">Controller返回JSON数据的demo，方式三：使用HttpServletResponse对象返回JSON数据</a> 
 </body>
 </html>

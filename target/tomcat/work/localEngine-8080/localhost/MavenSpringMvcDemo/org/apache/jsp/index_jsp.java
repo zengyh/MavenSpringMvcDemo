@@ -124,6 +124,24 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("     <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("/admin/user?add\" target=\"_blank\">表单提交demo</a>\r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/admin/onlefile?upload\" target=\"_blank\">单个文件上传</a>    \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/admin/mutilpartfile?upload\" target=\"_blank\">多文件上传</a>  \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/uploaded-files/preview\" target=\"_blank\">预览上传到服务器上的所有图片</a> \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/jsontype/view1/users/1\" target=\"_blank\">Controller返回JSON数据的demo，方式一：使用@ResponseBody标注</a>          \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/jsontype/view2/users/1\" target=\"_blank\">Controller返回JSON数据的demo，方式二：使用ResponseEntity</a> \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/jsontype/view3/users/1\" target=\"_blank\">Controller返回JSON数据的demo，方式三：使用HttpServletResponse对象返回JSON数据</a> \r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
