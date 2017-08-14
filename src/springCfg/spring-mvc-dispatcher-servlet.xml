@@ -69,6 +69,17 @@
               <value>classpath:fileupload.properties</value>  
           </property>  
      </bean>  
-	
+     
+	 <!-- Interceptor拦截器 -->
+	 <mvc:interceptors>
+	     <mvc:interceptor>
+	         <mvc:mapping path="/hello/*"/>
+	         <bean class="edu.mvc.demo.interceptor.HelloWorldInterceptor"></bean>	         
+	     </mvc:interceptor>
+	     <mvc:interceptor>
+	         <mvc:mapping path="/hello/*"/>
+	         <bean class="edu.mvc.demo.interceptor.HelloWorldInterceptor2"></bean>
+	     </mvc:interceptor>
+	 </mvc:interceptors>
 	
 </beans>  
