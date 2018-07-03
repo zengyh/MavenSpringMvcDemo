@@ -24,6 +24,7 @@ public class HelloWorldController {
 	 */
 	@RequestMapping(value="/world", method=RequestMethod.GET)
 	public String helloMvcGet(){
+	    System.out.println("helloword");
 		return "helloworld";
 	}
 	
@@ -48,6 +49,7 @@ public class HelloWorldController {
 	 */
 	@RequestMapping(value="/world2")
 	public String helloWorld(){
+		System.out.println("helloword2");
 		return "helloworld2";
 	}
 }
