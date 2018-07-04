@@ -87,6 +87,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("/say3?msg=helloworld\" target=\"_blank\">Controller获取请求参数的例子3（以Get方式发起/say3?msg=helloworld请求，将请求参数msg的值作为页面内容显示）</a>\r\n");
       out.write("     <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/say4?msg=helloworld\" target=\"_blank\">Controller获取请求参数的例子4（以Get方式发起/say4?msg=helloworld请求，将请求参数msg的值作为页面内容显示）</a>\r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("/users/view/1/use/ModelAndView\" target=\"_blank\">Controller中如何将model数据返回给页面，方式一：通过org.springframework.web.servlet.ModelAndView实现</a>\r\n");
       out.write("     <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
@@ -126,7 +129,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("/admin/user?add\" target=\"_blank\">表单提交demo</a>\r\n");
       out.write("     <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("/admin/onlefile?upload\" target=\"_blank\">单个文件上传</a>    \r\n");
+      out.write("/admin/onefile?upload\" target=\"_blank\">单个文件上传</a>    \r\n");
       out.write("     <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("/admin/mutilpartfile?upload\" target=\"_blank\">多文件上传</a>  \r\n");
@@ -142,6 +145,27 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("     <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("/jsontype/view3/users/1\" target=\"_blank\">Controller返回JSON数据的demo，方式三：使用HttpServletResponse对象返回JSON数据</a> \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/databind/demo/object?user.userName=Tom&admin.userName=Administrator\" target=\"_blank\">Spring MVC同属性多对象绑定Demo</a> \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/databind/demo/list?users[0].userName=Tom&users[1].userName=Sally\" target=\"_blank\">Spring MVC绑定List对象Demo</a> \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/databind/demo/set?users[0].userName=Tom&users[1].userName=Sally\" target=\"_blank\">Spring MVC绑定Set对象Demo</a> \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/databind/demo/map?users[user1].userName=Tom&users[user2].userName=Sally\" target=\"_blank\">Spring MVC绑定Map对象Demo</a> \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/jsp/jsondata-bind-demo.jsp\" target=\"_blank\">跳转到Spring MVC绑定Json对象Demo页面</a> \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/jsp/xmldata-bind-demo.jsp\" target=\"_blank\">跳转到Spring MVC绑定Xml对象Demo页面</a> \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/databind/demo/date.do?date=2017-11-19\" target=\"_blank\">Spring MVC绑定Date对象Demo</a> \r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
