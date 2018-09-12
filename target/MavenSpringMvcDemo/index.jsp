@@ -20,7 +20,7 @@
      <a href="${pageContext.request.contextPath}/say?msg=helloworld" target="_blank">Controller获取请求参数的例子1（以Get方式发起/say?msg=helloworld请求，将请求参数msg的值作为页面内容显示）</a>
      <a href="${pageContext.request.contextPath}/say2?msg=helloworld" target="_blank">Controller获取请求参数的例子2（以Get方式发起/say2?msg=helloworld请求，将请求参数msg的值作为页面内容显示）</a>
      <a href="${pageContext.request.contextPath}/say3?msg=helloworld" target="_blank">Controller获取请求参数的例子3（以Get方式发起/say3?msg=helloworld请求，将请求参数msg的值作为页面内容显示）</a>
-     <a href="${pageContext.request.contextPath}/say3?msg=helloworld" target="_blank">Controller获取请求参数的例子4（以Get方式发起/say4?msg=helloworld请求，将请求参数msg的值作为页面内容显示）</a>
+     <a href="${pageContext.request.contextPath}/say4?msg=helloworld" target="_blank">Controller获取请求参数的例子4（以Get方式发起/say4?msg=helloworld请求，将请求参数msg的值作为页面内容显示）</a>
      <a href="${pageContext.request.contextPath}/users/view/1/use/ModelAndView" target="_blank">Controller中如何将model数据返回给页面，方式一：通过org.springframework.web.servlet.ModelAndView实现</a>
      <a href="${pageContext.request.contextPath}/users/view/1/use/Model" target="_blank">Controller中如何将model数据返回给页面，方式二：通过org.springframework.ui.Model实现</a>
      <a href="${pageContext.request.contextPath}/users/view/1/use/ModelMap" target="_blank">Controller中如何将model数据返回给页面，方式三：通过org.springframework.ui.ModelMap实现</a>

@@ -27,6 +27,14 @@
 		<jackson.version>2.5.4</jackson.version>
 		<!-- lombok插件版本号 -->
 		<lombok.version>1.18.2</lombok.version>
+		<!-- hibernate -->
+		<hibernate.version>5.3.5.Final</hibernate.version>
+		<!-- oracle驱动包版本号 -->
+		<oracle.jdbc.version>10.2.0.3.0</oracle.jdbc.version>
+		<!-- 数据库连接池c3p0版本号 -->
+		<c3p0.version>0.9.1.2</c3p0.version>
+		<!-- ProtoStuff插件 -->
+		<protostuff.version>1.4.0</protostuff.version>		
 	</properties>
 	
 	<dependencies>
@@ -146,6 +154,45 @@
 		    <artifactId>lombok</artifactId>
 		    <version>${lombok.version}</version>
 		</dependency>		
+		<!-- end -->
+	    <!-- hibernate配置-->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>${hibernate.version}</version>
+		</dependency>	
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-ehcache</artifactId>
+		    <version>${hibernate.version}</version>
+		</dependency>
+		<!-- end -->
+		<!-- Oracle驱动包 -->
+		<dependency>
+		    <groupId>com.oracle</groupId>
+		    <artifactId>ojdbc14</artifactId>
+		    <version>${oracle.jdbc.version}</version>
+		</dependency>
+		<!-- end -->
+		<!-- 数据库连接池CP30 -->
+		<dependency>
+		    <groupId>c3p0</groupId>
+		    <artifactId>c3p0</artifactId>
+		    <version>${c3p0.version}</version>
+		</dependency>
+		<!-- end -->
+		<!-- ProtoStuff序列号和反序列化插件，不使用该插件，也可以去掉该依赖包 -->
+		<dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-core</artifactId>
+            <version>${protostuff.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-runtime</artifactId>
+            <version>${protostuff.version}</version>
+        </dependency>
+		<!-- end -->						
 	</dependencies>
 
 	<build>
