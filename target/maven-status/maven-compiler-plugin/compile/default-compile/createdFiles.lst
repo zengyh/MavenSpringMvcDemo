@@ -19,13 +19,11 @@ edu\mvcdemo\controller\RedirectURLController.class
 edu\mvcdemo\controller\HelloWorldController.class
 edu\mvcdemo\controller\ReturnModelDataController1.class
 edu\mvcdemo\controller\ResetFulController.class
-edu\mvc\demo\interceptor\HelloWorldInterceptor2.class
 edu\mvcdemo\controller\FileUploadController$1.class
 edu\mvcdemo\dao\UserDaoImpl.class
 edu\mvcdemo\controller\FormSubmitController.class
 edu\mvcdemo\model\SetForm.class
 edu\mvcdemo\controller\RetunnModelDataController3.class
-edu\mvc\demo\interceptor\HelloWorldInterceptor.class
 edu\mvcdemo\controller\VoidMethodDemoController.class
 edu\mvcdemo\model\MsgObject.class
 edu\mvcdemo\model\MapForm.class
