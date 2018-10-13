@@ -103,7 +103,7 @@
 	         <mvc:mapping path="/SecurityRiskTest/modiyParams"/>
 	         <bean class="edu.mvcdemo.interceptor.ModifyParamsDemoInterceptor"></bean>
 	     </mvc:interceptor>
-	     <!-- 拦截所有的用户请求 -->
+	     <!-- 信息安全拦截器，拦截所有的用户请求 -->
 	     <bean class="edu.mvcdemo.interceptor.SecurityRiskInterceptor"/>
 	 </mvc:interceptors>
 	
