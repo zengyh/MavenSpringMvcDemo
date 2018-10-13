@@ -56,5 +56,14 @@
 		<!-- mvc-dispatcher拦截jsp页面除外的所有的请求，如果也要拦截jsp页面可以使用/* -->
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
+
+	<!-- 将request请求对象封装成SecurityRiskRequestWrapper -->
+ 	<filter>
+	    <filter-name>request-wrap-filter</filter-name>
+	    <filter-class>edu.mvcdemo.filter.SecurityRiskRequestWrapperFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>request-wrap-filter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>	
 </web-app>

@@ -21,7 +21,26 @@
 	    <!-- 只注册@Controller类型的bean，忽略其他型的bean，如@Service-->
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
-	
+
+	<!-- 解决@ResponseBody返回中文乱码，必须放在<mvc:annotation-driven>之前 -->    
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">    
+        <property name="messageConverters">    
+            <list>
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <property name="writeAcceptCharset" value="false" /> <!--  用于避免响应头过大  -->
+                    <property name="supportedMediaTypes">    
+                        <list>    
+                            <value>text/plain;charset=UTF-8</value>  
+                            <value>text/html;charset=UTF-8</value>  
+                            <value>applicaiton/javascript;charset=UTF-8</value> 
+                        </list>    
+                    </property>    
+                </bean>    
+            </list>    
+        </property>    
+    </bean>  
+    	
     <!-- 激活注解 @RequestMapping, @ExceptionHandler,@Controller,@RequestBody ,@ResponseBody等，
                   即Spring MVC的Controller的相关的注解和数据绑定的注解都会生效 -->
 	<mvc:annotation-driven/>
@@ -80,6 +99,12 @@
 	         <mvc:mapping path="/hello/*"/>
 	         <bean class="edu.mvcdemo.interceptor.HelloWorldInterceptor2"></bean>
 	     </mvc:interceptor>
+	     <mvc:interceptor>
+	         <mvc:mapping path="/SecurityRiskTest/modiyParams"/>
+	         <bean class="edu.mvcdemo.interceptor.ModifyParamsDemoInterceptor"></bean>
+	     </mvc:interceptor>
+	     <!-- 拦截所有的用户请求 -->
+	     <bean class="edu.mvcdemo.interceptor.SecurityRiskInterceptor"/>
 	 </mvc:interceptors>
 	
 </beans>  

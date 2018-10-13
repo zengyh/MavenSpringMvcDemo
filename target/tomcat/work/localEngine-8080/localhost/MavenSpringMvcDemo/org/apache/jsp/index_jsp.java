@@ -166,6 +166,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("     <a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("/databind/demo/date.do?date=2017-11-19\" target=\"_blank\">Spring MVC绑定Date对象Demo</a> \r\n");
+      out.write("     <a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("/SecurityRiskTest/modiyParams\" target=\"_blank\">如何做到篡改请求参数(request的parameter对象)Demo</a> \r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

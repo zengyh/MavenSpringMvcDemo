@@ -2,6 +2,9 @@ package edu.mvcdemo.utils;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -42,5 +45,17 @@ public class StringUtils {
 		                     .append(request.getContextPath());
 		return webContextPathBuilder.toString();
     }
-
+    
+    /**
+     * 判断字符串中是否包含代码注入的特殊符号
+     * @param str
+     * @return
+     */
+    public static boolean isCodeInject(String str){
+    	String regEx = "^select\\s|\\sselect\\s|^update\\s|\\supdate\\s|^delete\\s|\\sdelete\\s|^exec\\s|\\sexec\\s|^insert\\s|\\sinsert\\s|^drop\\s|\\sdrop\\s|\\'|%|--|#|;|>|<";
+        Pattern pattern = Pattern.compile(regEx);
+        Matcher m = pattern.matcher(str);
+        return m.find();
+    }
+    
 }

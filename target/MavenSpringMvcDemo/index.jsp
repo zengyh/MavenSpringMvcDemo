@@ -47,5 +47,6 @@
      <a href="${pageContext.request.contextPath}/jsp/jsondata-bind-demo.jsp" target="_blank">跳转到Spring MVC绑定Json对象Demo页面</a> 
      <a href="${pageContext.request.contextPath}/jsp/xmldata-bind-demo.jsp" target="_blank">跳转到Spring MVC绑定Xml对象Demo页面</a> 
      <a href="${pageContext.request.contextPath}/databind/demo/date.do?date=2017-11-19" target="_blank">Spring MVC绑定Date对象Demo</a> 
+     <a href="${pageContext.request.contextPath}/SecurityRiskTest/modiyParams" target="_blank">如何做到篡改请求参数(request的parameter对象)Demo</a> 
 </body>
 </html>
