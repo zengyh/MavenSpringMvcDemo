@@ -34,7 +34,7 @@ public class RetunnModelDataController4 {
 	 */
 	@RequestMapping(value="/view/{userId}/use/HttpSession", method=RequestMethod.GET)
 	private String getUserInfo(@PathVariable("userId") Integer userId, HttpSession session){
-		User user = userService.getUserById(userId);
+		User user = userService.getUserByIdSample(userId);
 		session.setAttribute("user", user);
 		return "userinfo";
 	}
@@ -47,7 +47,7 @@ public class RetunnModelDataController4 {
 	 */
 	@RequestMapping(value="/view/{userId}/use/HttpServletRequest", method=RequestMethod.GET)
 	private String getUserInfo(@PathVariable("userId") Integer userId, HttpServletRequest request){
-		User user = userService.getUserById(userId);
+		User user = userService.getUserByIdSample(userId);
 		request.setAttribute("user", user);
 		return "userinfo";
 	}

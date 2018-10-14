@@ -8,7 +8,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import edu.mvcdemo.utils.StringUtils;
+
+import common.utils.StringUtils;
 
 /**
  * @编写人： yh.zeng

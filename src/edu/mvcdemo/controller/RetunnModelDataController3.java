@@ -36,7 +36,7 @@ public class RetunnModelDataController3 {
 	 */
 	@ModelAttribute(name="user") 
 	public User addAccount(@PathVariable("userId") Integer userId) {  
-	   return userService.getUserById(userId);  
+	   return userService.getUserByIdSample(userId);  
 	}  
 
 	/**

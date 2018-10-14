@@ -1,6 +1,7 @@
 package edu.mvcdemo.service;
 
-import edu.mvcdemo.model.User;
+import java.util.List;
+import edu.mvcdemo.entity.User;
 
 /**
  * @编写人： yh.zeng
@@ -10,10 +11,19 @@ import edu.mvcdemo.model.User;
 public interface IUserService {
 	
 	/**
-	 * 根据用户编号获取用户信息
+	 * 模拟根据用户编号获取用户信息
 	 * @param no 用户编号
 	 * @return
 	 */
-	public User getUserById(Integer no);
-
+	public edu.mvcdemo.model.User getUserByIdSample(Integer no);
+	
+	public List<User> findAll();
+	
+	public String save(User user);
+	
+	public User checkLogin(User user);
+	
+	
+	public User findByUserName(String userName);
+	
 }

@@ -30,7 +30,7 @@
 		<!-- oracle驱动包版本号 -->
 		<oracle.jdbc.version>10.2.0.3.0</oracle.jdbc.version>
 		<!-- 数据库连接池c3p0版本号 -->
-		<c3p0.version>0.9.1.2</c3p0.version>
+		<c3p0.version>0.9.5.2</c3p0.version>
 		<!-- ProtoStuff插件 -->
 		<protostuff.version>1.4.0</protostuff.version>
 		<!-- Tomcat的jar包版本号 -->
@@ -38,6 +38,8 @@
 		<!-- Mybatis的jar包版本号 -->
 		<mybatis.version>3.4.6</mybatis.version>
 		<mybatis.spring.version>1.3.2</mybatis.spring.version>
+		<!-- log4jdbc的jar包版本号 -->
+		<log4jdbc.version>0.2.7</log4jdbc.version>
 	</properties>
 	
 	<dependencies>
@@ -71,6 +73,13 @@
             <artifactId>slf4j-log4j12</artifactId>  
             <version>${org.slf4j.slf4j-log4j12.version}</version>  
         </dependency> 
+		<!-- end  -->
+		<!-- log4jdbc包，用于sql执行语句的日志打印 -->
+		<dependency>  
+            <groupId>org.lazyluke</groupId>  
+            <artifactId>log4jdbc-remix</artifactId>  
+            <version>${log4jdbc.version}</version>  
+        </dependency>		
 		<!-- end  -->
 		<!-- common包 -->
 		<dependency>
@@ -184,7 +193,7 @@
 		<!-- end -->
 		<!-- 数据库连接池CP30 -->
 		<dependency>
-		    <groupId>c3p0</groupId>
+		    <groupId>com.mchange</groupId>
 		    <artifactId>c3p0</artifactId>
 		    <version>${c3p0.version}</version>
 		</dependency>

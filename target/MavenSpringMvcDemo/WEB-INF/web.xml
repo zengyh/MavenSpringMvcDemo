@@ -24,6 +24,16 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    
+	<!-- 初始化 LocalRequestContext 上下文-->
+ 	<filter>
+	    <filter-name>context-filter</filter-name>
+	    <filter-class>common.filter.LocalRequestContextFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>context-filter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>    
 
 	<!-- Spring应用上下文，如果不想使用Spring容器管理java bean，只是单纯第使用Spring MVC，可以不添加 -->
 	<context-param>
@@ -60,7 +70,7 @@
 	<!-- 将request请求对象封装成SecurityRiskRequestWrapper -->
  	<filter>
 	    <filter-name>request-wrap-filter</filter-name>
-	    <filter-class>edu.mvcdemo.filter.SecurityRiskRequestWrapperFilter</filter-class>
+	    <filter-class>common.filter.SecurityRiskRequestWrapperFilter</filter-class>
 	</filter>
 	<filter-mapping>
 	    <filter-name>request-wrap-filter</filter-name>

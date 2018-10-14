@@ -36,7 +36,7 @@ public class ReturnModelDataController1 {
 	 */
 	@RequestMapping(value="/view/{userId}/use/ModelAndView", method=RequestMethod.GET)
 	private ModelAndView getUserInfo(@PathVariable("userId") Integer userId){
-		User user = userService.getUserById(userId);
+		User user = userService.getUserByIdSample(userId);
 		return new ModelAndView("userinfo", "user", user);
 	}
 	
@@ -46,7 +46,7 @@ public class ReturnModelDataController1 {
 	 */
 	@RequestMapping(value="/view/{userId}/use/Model", method=RequestMethod.GET)
 	private String getUserInfo(@PathVariable("userId") Integer userId, Model model){
-		User user = userService.getUserById(userId);
+		User user = userService.getUserByIdSample(userId);
 		model.addAttribute("user", user);
 		return "userinfo";
 	}
@@ -58,7 +58,7 @@ public class ReturnModelDataController1 {
 	 */
 	@RequestMapping(value="/view/{userId}/use/ModelMap", method=RequestMethod.GET)
 	private String getUserInfo(@PathVariable("userId") Integer userId, ModelMap model){
-		User user = userService.getUserById(userId);
+		User user = userService.getUserByIdSample(userId);
 		model.addAttribute("user", user);
 		return "userinfo";
 	}
@@ -69,7 +69,7 @@ public class ReturnModelDataController1 {
 	 */
 	@RequestMapping(value="/view/{userId}/use/Map", method=RequestMethod.GET)
 	private String getUserInfo(@PathVariable("userId") Integer userId, Map<String,Object> model){
-		User user = userService.getUserById(userId);
+		User user = userService.getUserByIdSample(userId);
 		model.put("user", user);
 		return "userinfo";
 	}

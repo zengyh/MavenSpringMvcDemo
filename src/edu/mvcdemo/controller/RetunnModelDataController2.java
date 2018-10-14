@@ -33,7 +33,7 @@ public class RetunnModelDataController2 {
 	 */
 	@RequestMapping(value="/view/{userId}/use/SessionAttributes", method=RequestMethod.GET)
 	private ModelAndView getUserInfo(@PathVariable("userId") Integer userId){
-		User user = userService.getUserById(userId);
+		User user = userService.getUserByIdSample(userId);
 		return new ModelAndView("userinfo", "user", user);
 	}
 

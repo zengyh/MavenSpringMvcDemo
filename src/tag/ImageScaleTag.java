@@ -7,7 +7,8 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.BodyTagSupport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import edu.mvcdemo.utils.StringUtils;
+
+import common.utils.StringUtils;
 
 /**
  * 文件名称: ImageScaleTag.java
