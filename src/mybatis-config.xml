@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 解决 MyBatis 插入NULL值的时候，不设置jdbcType会报错，错误信息如下 
+               Try setting a different JdbcType for this parameter or a different 
+                 jdbcTypeForNull configuration property. Cause: java.sql.SQLException: 无效的列类型   -->
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
+</configuration>

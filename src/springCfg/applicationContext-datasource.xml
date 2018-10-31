@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:aop="http://www.springframework.org/schema/aop" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+	<!-- 数据源 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="user" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+	    <!-- 连接池中保留的最大连接数，默认15 -->
+		<property name="maxPoolSize" value="${jdbc.poolmax}"></property>
+		<!-- 连接池中保留的最小连接数 -->
+		<property name="minPoolSize" value="${jdbc.poolmin}"></property>
+		<!-- 初始化时获取的连接数 -->
+		<property name="initialPoolSize" value="${jdbc.poolinit}"></property>
+		<!-- 连接池为数据源缓存的PreparedStatement的总数 -->
+		<property name="maxStatements" value="${jdbc.maxStatements}"></property>
+		<!-- 连接池内单个连接所拥有的最大缓存 statements 数 -->
+		<property name="maxStatementsPerConnection" value="${jdbc.maxStatementsPerConnection}"></property>
+		<!-- 连接的最大空闲时间(单位：秒)，如果超过这个时间，数据库连接还没有被使用，则会断开掉这个连接 -->
+		<property name="maxIdleTime" value="${jdbc.maxIdleTime}"></property>
+		<!-- 每多少秒检查所有连接池中的空闲连接，单位：秒-->
+		<property name="idleConnectionTestPeriod" value="${jdbc.idleConnectionTestPeriod}"></property>
+		<!-- 接池在获得新连接失败时重试的次数-->
+		<property name="acquireRetryAttempts" value="${jdbc.acquireRetryAttempts}"></property>	
+		<!-- getConnection的等待时间（单位：毫秒）。为0则无限等待直至有其他连接释放或者创建新的连接。-->
+		<property name="checkoutTimeout" value="${jdbc.checkoutTimeout}"></property>			
+	</bean>
+   
+	<!-- 使用log4jdbc将数据源执行的sql以日志打印出来，可以将占位符？替换成字符，
+	          详情请看: http://code.google.com/p/rapid-framework/wiki/log4jdbc 如：
+	            原来的sql: select * from t_user where username = ? and password = ?
+	         转换后的sql: select * from t_user where username = '张三' and password = '12345678'
+	 -->
+    <bean id="log4jdbcInterceptor" class="net.sf.log4jdbc.DataSourceSpyInterceptor"/>
+	<bean id="jdbcUserContextInterceptor"  class="common.interceptor.JdbcUserContextInterceptor"/>
+	<bean id="dataSourceLog4jdbcAutoProxyCreator"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="interceptorNames">
+			<list>
+				<value>log4jdbcInterceptor</value>
+				<value>jdbcUserContextInterceptor</value>
+			</list>
+		</property>
+		<property name="beanNames">
+			<list>
+				<value>dataSource</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<property name="typeAliasesPackage" value="edu.mvcdemo.demo.entity" />
+		<property name="mapperLocations" value="classpath*:/edu/mvcdemo/**/*-mybatis.xml" />
+	</bean>
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	    <property name="annotationClass" value="org.springframework.stereotype.Repository" />
+	    <property name="basePackage" value="edu.mvcdemo.**.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+        
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 使用申明式事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+   
+</beans>

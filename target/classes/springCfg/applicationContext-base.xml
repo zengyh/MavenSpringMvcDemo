@@ -20,4 +20,5 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 	
+	<bean id="springContextHolder" class="common.utils.SpringContextHolder" lazy-init="false"/>
 </beans>
