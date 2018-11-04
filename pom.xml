@@ -375,8 +375,9 @@
 	</build>
 
 	<!-- repositories 配置远程仓库 -->
-	<!-- 1、先从settings.xml配置的仓库中下载构建（即jar包），如果没有该构建，则从pom.xml的repositories中下载-->
+	<!-- 1、先从settings.xml配置的仓库<repositories>中下载构建（即jar包），如果没有该构建，则从pom.xml的<repositories>中下载-->
 	<!-- 2、构建的下载，按照配置的仓库的先后顺序来查找和下载-->
+	<!-- 3、【特别注意】 如果 settings.xml配置了mirrors镜像仓库，则该配置无效！【不】会从pom.xml的<repositories>中下载，只会从mirrors镜像仓库中查找下载！-->
 	<repositories>
 	    <repository>
 	        <id>nexus-aliyun</id>
