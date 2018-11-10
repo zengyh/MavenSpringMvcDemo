@@ -21,13 +21,21 @@ public class SwitchControlUtils {
 	 * @return
 	 */
 	public static boolean isSwitchOpen(String switchName){
+		boolean isOpen = false;
+		
 		if(switchControlService == null){
-			switchControlService = SpringContextHolder.getBean("switchControlService");
+			try{
+				switchControlService = SpringContextHolder.getBean("switchControlService");
+			}catch(Exception e){
+			}
 		}
-		if(switchControlService == null){
-			return false;
+		
+		try{
+			isOpen = switchControlService.isSwitchOpen(switchName);
+		}catch(Exception e){
 		}
-		return switchControlService.isSwitchOpen(switchName);
+
+		return isOpen;
 	}
 
 }
