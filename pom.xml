@@ -30,7 +30,7 @@
 		<!-- oracle驱动包版本号 -->
 		<oracle.jdbc.version>10.2.0.3.0</oracle.jdbc.version>
 		<!-- 数据库连接池c3p0版本号 -->
-		<c3p0.version>0.9.5.2</c3p0.version>
+		<c3p0.version>0.9.5.4</c3p0.version>
 		<!-- ProtoStuff插件 -->
 		<protostuff.version>1.4.0</protostuff.version>
 		<!-- Tomcat的jar包版本号 -->
