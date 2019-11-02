@@ -8,8 +8,7 @@ import lombok.ToString;
 /**
  * @编写人： yh.zeng
  * @编写时间：2018-9-14 下午11:58:59
- * @文件描述: 实现HttpSessionBindingListener接口的作用  
- *             1) Session中移除User对象，则自动从UserList用户列表中移除该用户
+ * @文件描述: 
  */
 @Data
 @NoArgsConstructor

@@ -16,6 +16,9 @@ import lombok.ToString;
  * @编写人： yh.zeng
  * @编写时间：2018-10-14 下午7:07:51
  * @文件描述: 登陆用户信息
+ *            实现HttpSessionBindingListener接口的作用  
+ *      1) Session中移除UserInfo对象，则自动从UserList用户列表中移除该用户
+ *      2) Session中添加UserInfo对象，则自动往UserList用户列表中添加该用户
  */
 @Data
 @NoArgsConstructor
