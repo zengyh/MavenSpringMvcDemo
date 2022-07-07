@@ -16,7 +16,7 @@
 		<maven.compiler.source.version>1.7</maven.compiler.source.version>
 		<!-- 目标平台Java编译版本 -->
 		<maven.compiler.target.version>1.7</maven.compiler.target.version>
-		<spring.version>4.3.9.RELEASE</spring.version>
+		<spring.version>5.2.21.RELEASE</spring.version>
 		<commons.logging.version>1.2</commons.logging.version>
 		<javax.servlet.jsp.version>2.2</javax.servlet.jsp.version>
 		<jstl.jstl.version>1.2</jstl.jstl.version>
